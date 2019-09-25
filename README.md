@@ -11,19 +11,8 @@ Define a family tree:
 
 Command line tool (family-tree) can have the following options:
 
-`family-tree add person <name>`
+`add <name> <gender>`
 
-Example: family-tree add person Amit Dhakad
+`<name 1> as <relationship> of <name 2>`
 
-`family-tree add relationship <name>`
-
-Example: family-tree add relationship father
-
-Example: family-tree add relationship son
-
-`family-tree connect <name 1> as <relationship> of <name 2>`
-
-Example: family-tree connect Amit Dhakad as son of KK Dhakad
-
-
-
+Example: Amit Dhakad as son of KK Dhakad
