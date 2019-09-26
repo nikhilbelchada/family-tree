@@ -1,7 +1,7 @@
 class Command
 
-  def self.is_valid?(name)
-    self.get_command_from(name) != nil
+  def self.is_valid?(text)
+    self.get_command_from(text) != nil
   end
 
   def self.get_command_from(text)

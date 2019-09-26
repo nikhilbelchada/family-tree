@@ -2,11 +2,20 @@ require 'family_tree'
 require 'person'
 require 'gender'
 require 'family'
+
 require 'relation'
 require 'relation/father'
 require 'relation/mother'
 require 'relation/child'
+require 'relation/daughter'
+require 'relation/son'
 require 'relation/sibling'
+require 'relation/brother'
+require 'relation/sister'
+
+require 'utils.rb'
+require 'utils/message.rb'
+require 'string.rb'
 
 RSpec.describe FamilyTree do
   context "Initialize" do

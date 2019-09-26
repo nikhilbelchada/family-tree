@@ -15,6 +15,7 @@ class Family
 
   def add_children(children)
     return if @childrens.select {|c| c == children }.count > 0
+
     @childrens << children
   end
 

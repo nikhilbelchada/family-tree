@@ -7,7 +7,7 @@ class Relation::Father
     father.family.father = father
     child.family.add_children(child)
 
-    puts "Success: Added #{father.name} as father of #{child.name}".bg_green
+    Utils::Message.success("Added #{father.name} as father of #{child.name}")
   end
 
   def self.assign_family(father, child)

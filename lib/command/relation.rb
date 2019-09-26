@@ -16,7 +16,7 @@ class Command::Relation
 
   def self.get_match_symbol(text)
     ::Relation.get_all_symbols
-      .select {|t| text.include?(t)}
+      .select {|t| text.include?("as #{t} of")}
       .first
   end
 

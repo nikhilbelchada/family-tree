@@ -1,7 +1,7 @@
 class Command::Add
 
   def self.match?(text)
-    text.include?("add")
+    text.start_with?("add ")
   end
 
   def self.extract_options(text)

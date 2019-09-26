@@ -46,6 +46,13 @@ class Person
     @family.mother == self
   end
 
+  def is_parent?
+    is_father? or is_mother?
+  end
+
+  def search(relation, options)
+  end
+
   def to_json
     {
       name: @name,

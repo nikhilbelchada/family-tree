@@ -10,7 +10,7 @@ class Utils::Console
         command, options = Utils::Parser.parse(command)
         command.execute(family_tree, options)
       rescue Exception => e
-        puts "Error: #{e}".bg_red
+        Utils::Message.error(e)
       end
 
       puts

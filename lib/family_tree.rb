@@ -8,7 +8,7 @@ class FamilyTree
 
   def add(member, gender)
     @members << Person.new(member, gender)
-    puts "Success: Added #{member} to family tree".bg_green
+    Utils::Message.success("Added #{member} to family tree")
   end
 
   def add_relation_as(first_person, relation, second_person)
@@ -22,6 +22,17 @@ class FamilyTree
 
     assign_family(first_member, second_member)
     Relation.assign(first_member, relation, second_member)
+  end
+
+  # search for daughter of x
+  def search_for(relation, person_name, options={})
+    relation = Relation.get_relation_from(relation)
+    person = get_member_by(person_name)
+
+    raise "Invalid Relation" if relation.nil?
+    raise "#{person_name} doesnot exitst in Family Tree" if person.nil?
+
+    relation.search_for(person, options)
   end
 
   def assign_family(first_member,  second_member)

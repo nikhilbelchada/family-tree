@@ -1,5 +1,5 @@
 class Relation::Sibling
-  SYMBOLS = ["brother", "sister"]
+  SYMBOLS = ["sibling"]
 
   def self.assign(sibling_one, sibling_two)
     self.assign_family(sibling_one, sibling_two)
@@ -8,7 +8,7 @@ class Relation::Sibling
     family.add_children(sibling_one)
     family.add_children(sibling_two)
 
-    puts "Success: Added #{sibling_one.name} as sibling of #{sibling_two.name}".bg_green
+    Utils::Message.success("Added #{sibling_one.name} as sibling of #{sibling_two.name}")
   end
 
   def self.assign_family(sibling_one, sibling_two)
@@ -17,5 +17,11 @@ class Relation::Sibling
     elsif !sibling_one.belongs_to_family? and sibling_two.belongs_to_family?
       sibling_one.family = sibling_two.family
     end
+  end
+
+  def self.search_for(person, options={})
+    raise "#{person.name} does not belongs to any family" if person.family.nil?
+
+    person.parent_family.nil? ? person.family.childrens : person.parent_family.childrens
   end
 end

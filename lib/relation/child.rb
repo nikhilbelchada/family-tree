@@ -1,5 +1,5 @@
 class Relation::Child
-  SYMBOLS = ["daughter", "son", "child"]
+  SYMBOLS = []
 
   def self.assign(child, parent)
     self.assign_family(child, parent)
@@ -10,7 +10,7 @@ class Relation::Child
 
     family.add_children(child)
 
-    puts "Success: Added #{child.name} as #{child.is_male? ? "son" : "daugher"} of #{parent.name}".bg_green
+    Utils::Message.success("Added #{child.name} as #{child.is_male? ? "son" : "daugher"} of #{parent.name}")
   end
 
   def self.assign_family(child, parent)

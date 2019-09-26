@@ -7,7 +7,7 @@ class Relation::Mother
     mother.family.mother = mother
     child.family.add_children(child)
 
-    puts "Success: Added #{mother.name} as mother of #{child.name}".bg_green
+    Utils::Message.success("Added #{mother.name} as mother of #{child.name}")
   end
 
   def self.assign_family(mother, child)
