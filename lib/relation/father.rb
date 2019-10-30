@@ -23,4 +23,8 @@ class Relation::Father
       father.family = family
     end
   end
+
+  def self.search_for(person, options={})
+    nil
+  end
 end

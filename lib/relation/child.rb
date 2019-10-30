@@ -27,4 +27,9 @@ class Relation::Child
       child.family.childrens.each {|c| family.add_children(c)}
     end
   end
+
+  def self.search_for(person, options={})
+    nil
+  end
+
 end

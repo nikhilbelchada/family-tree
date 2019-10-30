@@ -24,4 +24,8 @@ class Relation::Sibling
 
     person.parent_family.nil? ? person.family.childrens : person.parent_family.childrens
   end
+
+  def self.search_for(person, options={})
+    nil
+  end
 end
